@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Website Updates</title>
+    <style>
+        /* Styles for the update section */
+
+        .latest_movie_updates {
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .latest_movie_update_container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* Align updates to the right side */
+            animation: scrollUpdates 15s linear infinite;
+            /* Adjust the duration to control the speed of scrolling */
+        }
+
+        .latest_movie_update_item {
+            width: 100%;
+            padding: 20px;
+            opacity: 1;
+        }
+        /* Keyframes for the fadeIn animation */
+        /* Keyframes for the slideIn animation */
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+            }
+        }
+        /* Keyframes for the infinite scrolling animation */
+
+        @keyframes scrollUpdates {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Your Website</h1>
+    </header>
+
+    <section class="latest_movie_updates">
+        <h2>Latest Updates</h2>
+        <div class="latest_movie_update_container" id="latest_movie_update_container">
+            <div class="latest_movie_update_item">
+                <h3>New Product Release</h3>
+                <p>Date: 2023-10-20</p>
+                <p>We are excited to announce the launch of our new product! This innovative solution will revolutionize the way you [describe the product].</p>
+            </div>
+            <div class="latest_movie_update_item">
+                <h3>Company News</h3>
+                <p>Date: 2023-10-18</p>
+                <p>We've just opened a new office in the heart of the city. This marks a significant milestone for our company.</p>
+            </div>
+            <!-- Add more initial update items as needed -->
+        </div>
+        <!-- Add more update items as needed to continue the animation -->
+    </section>
+
+
+
+    <script>
+        const updateContainer = document.getElementById('latest_movie_update_container');
+
+        updateContainer.addEventListener('mouseenter', () => {
+            updateContainer.style.animationPlayState = 'paused';
+        });
+
+        updateContainer.addEventListener('mouseleave', () => {
+            updateContainer.style.animationPlayState = 'running';
+        });
+    </script>
+</body>
+
+</html>

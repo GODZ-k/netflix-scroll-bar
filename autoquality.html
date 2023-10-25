@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <title>Video Player with Quality Selection</title>
+</head>
+
+<body>
+    <div style="height: 400px;">
+        <video id="player" controls></video>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("player");
+            const source = "static/media/videos/video.m3u8";
+            let hls; // Declare hls here to make it accessible in updateQuality
+
+            if (Hls.isSupported()) {
+                hls = new Hls();
+                hls.loadSource(source);
+                hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
+                    const availableQualities = [0, ...hls.levels.map(l => l.height)];
+                    const defaultOptions = {
+                        quality: {
+                            default: 0,
+                            options: availableQualities,
+                            forced: true,
+                            onChange: (newQuality) => updateQuality(newQuality),
+                        },
+                        i18n: {
+                            qualityLabel: {
+                                0: "Auto",
+                            },
+                        },
+                    };
+                    const player = new Plyr(video, defaultOptions);
+                });
+                hls.attachMedia(video);
+                window.hls = hls;
+            }
+
+            function updateQuality(newQuality) {
+                if (hls) {
+                    hls.currentLevel = newQuality === 0 ? -1 : hls.levels.findIndex(level => level.height === newQuality);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
