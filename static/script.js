@@ -286,12 +286,12 @@ updateContainer.addEventListener('mouseleave', () => {
 
 var mySwiper = new Swiper('.swiper', {
     // Optional parameters
-    spaceBetween: 5,
+    spaceBetween: 8,
     slidesPerView: 2,
     loop: true,
     freeMode: true,
-    // loopAdditionalSlides: 5,
-    speed: 500,
+    loopAdditionalSlides: 5,
+    speed: 1000,
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
@@ -302,7 +302,11 @@ var mySwiper = new Swiper('.swiper', {
         640: {
             slidesPerView: 5,
             slidesPerGroup: 5,
-            freeMode: true
+            freeMode: true,
         }
     }
 })
+
+
+
+// live search
