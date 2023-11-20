@@ -19,7 +19,6 @@
     <script src="https://kit.fontawesome.com/5df2e58af9.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <title>Netifix</title>
 </head>
@@ -28,8 +27,8 @@
 
     <!-- if need netflix animated logo insert in .netflix  -->
     <!-- <span class="left"></span>
-                <!-- <span class="center"></span> -->
-    <!-- <span class="right"></span> -->
+       <span class="center"></span>
+    <span class="right"></span> -->
 
     <!-- preloader  ------------------------------------------------------- -->
 
@@ -69,9 +68,12 @@
                         </a>
                     <!-- <ul class="dropdown-menu" id="dropdownmenu"> -->
                     <ul class="drop-menu">
-                        <li><a>Action</a></li>
                         <li>
-                            <a>Advanture</a></li>
+                            <a>Action</a>
+                        </li>
+                        <li>
+                            <a>Advanture</a>
+                        </li>
                         <li><a>Comedy</a></li>
 
                         <li>
@@ -99,8 +101,6 @@
                         <li>
                             <a>Sports</a>
                         </li>
-
-
                     </ul>
                     <!-- <div> -->
 
@@ -185,16 +185,19 @@
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
     </section>
-    <!--  hot thrills seaction ----------------------------------------------- -->
+
+
+    <!-- video trailler section -->
     <div class="video-popup" id="videoPopup">
         <span class="close" id="closePopup">&times;</span>
         <iframe id="videoIframe" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
     </div>
 
 
+    <!--  hot thrills seaction ----------------------------------------------- -->
     <section id="hot-thrills">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="background-color:black;">
                 <div class="carousel-item video-slider" data-bs-interval="10000">
                     <video src="/static/media/The Dark Knight Rises - Official Teaser Trailer [HD].mp4" preload="auto" class="video" autoplay muted poster="/static/media/stranger-things-bicycle-tv-netflix-wallpaper-preview.jpg"></video>
                     <div class="carousel-caption">
@@ -419,12 +422,11 @@
                     <div class="sub-container-desc">
                         <div class="movie-desc-overlay">
                             <div class="overlay-trailler">
-                                <iframe src="https://www.youtube-nocookie.com/embed/ndl1W4ltcmg?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=ndl1W4ltcmg" width="545" height="300" title="THE WITCHER | MAIN TRAILER | NETFLIX"
-                                    frameborder="0"></iframe>
+                                <iframe src="https://www.youtube.com/embed/vwSKatRviQo?start=3&end=56&vq=hd1080&autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&color=white&disablekb=1&playlist=vwSKatRviQo" width="545" height="300" frameborder="0"></iframe>
                             </div>
                             <div class="overlay-description">
                                 <div class="overlay-trailler-moreinfo-btn">
-                                    <button class="watch-trailler-1" data-video-id="ndl1W4ltcmg">
+                                    <button class="watch-trailler-1" data-video-id="vwSKatRviQo">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                         </svg>
@@ -1272,6 +1274,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>lo
     <script src="/static/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
